@@ -51,8 +51,13 @@ export function CommandNew(program: Command) {
       // fs.writeFileSync(globalDTsFilePath, globalDTsContent());
 
       // global.d.ts 파일 생성하기
-      const torytisEnvDFilePath = path.join(currentTerminalPath, projectName, 'global.d.ts');
-      fs.writeFileSync(torytisEnvDFilePath, globalDTsContent());
+      const typesFolderPath = path.join(currentTerminalPath, projectName, '@types');
+      if (!fs.existsSync(typesFolderPath)) {
+        fs.mkdirSync(typesFolderPath);
+      }
+      const typesGlobalDTsFilePath = path.join(typesFolderPath, 'global.d.ts');
+      fs.writeFileSync(typesGlobalDTsFilePath, globalDTsContent());
+      fs.writeFileSync(path.join(newRepositoryPath, 'global.d.ts'), globalDTsContent());
 
       // .gitignore 파일 생성하기
       const gitignoreFilePath = path.join(currentTerminalPath, projectName, '.gitignore');

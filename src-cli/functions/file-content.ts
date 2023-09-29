@@ -62,7 +62,7 @@ module.exports = {
 }
 `.trim();
 
-/** global.d.ts */
+/** @types/global.d.ts */
 export const globalDTsContent = () => `
 /// <reference types="@wisdomstar94/torytis" />
 `.trim();
