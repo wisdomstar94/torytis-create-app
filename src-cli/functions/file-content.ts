@@ -18,6 +18,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.3",
+    "postcss-modules": "^6.0.0",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
     "@wisdomstar94/torytis": "^0.0.4"
