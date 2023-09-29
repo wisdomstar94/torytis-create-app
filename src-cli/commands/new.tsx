@@ -2,7 +2,7 @@ import { Command } from "commander";
 import path from "path";
 import fs from 'fs';
 import { exec } from 'child_process';
-import { gitignoreContent, globalDTsContent, indexScssContent, indexTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
+import { gitignoreContent, indexScssContent, indexTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
 
 export function CommandNew(program: Command) {
   program
@@ -46,9 +46,13 @@ export function CommandNew(program: Command) {
       const tailwindConfigJsFilePath = path.join(currentTerminalPath, projectName, 'tailwind.config.js');
       fs.writeFileSync(tailwindConfigJsFilePath, tailwindConfigJsContent());
 
-      // global.d.ts 파일 생성하기
-      const globalDTsFilePath = path.join(currentTerminalPath, projectName, 'global.d.ts');
-      fs.writeFileSync(globalDTsFilePath, globalDTsContent());
+      // // global.d.ts 파일 생성하기
+      // const globalDTsFilePath = path.join(currentTerminalPath, projectName, 'global.d.ts');
+      // fs.writeFileSync(globalDTsFilePath, globalDTsContent());
+
+      // torytis-env.d.ts 파일 생성하기
+      const torytisEnvDFilePath = path.join(currentTerminalPath, projectName, 'torytis-env.d.ts');
+      fs.writeFileSync(torytisEnvDFilePath, torytisEnvDTsContent());
 
       // .gitignore 파일 생성하기
       const gitignoreFilePath = path.join(currentTerminalPath, projectName, '.gitignore');
