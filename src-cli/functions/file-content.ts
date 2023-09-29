@@ -20,7 +20,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
-    "@wisdomstar94/torytis": "^0.0.1"
+    "@wisdomstar94/torytis": "^0.0.3"
   }
 }
 `.trim();
@@ -121,7 +121,7 @@ module.exports = {
 
 /** torytis-env.d.ts */
 export const torytisEnvDTsContent = () => `
-/// <reference types="torytis" />
+/// <reference types="@wisdomstar94/torytis" />
 `.trim();
 
 /** .gitignore */
