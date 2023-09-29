@@ -61,8 +61,8 @@ module.exports = {
 }
 `.trim();
 
-/** index.d.ts */
-export const indexDTsContent = () => `
+/** global.d.ts */
+export const globalDTsContent = () => `
 /// <reference types="@wisdomstar94/torytis" />
 `.trim();
 
