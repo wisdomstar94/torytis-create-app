@@ -64,6 +64,12 @@ export function CommandNew(program: Command) {
         fs.mkdirSync(srcFolderPath);
       }
 
+      // src/public 폴더 생성하기
+      const srcPublicFolderPath = path.join(currentTerminalPath, projectName, 'src', 'public');
+      if (!fs.existsSync(srcPublicFolderPath)) {
+        fs.mkdirSync(srcPublicFolderPath);
+      }
+
       // src/index.tsx 파일 생성하기
       const indexTsxFilePath = path.join(currentTerminalPath, projectName, 'src', 'index.tsx');
       if (!fs.existsSync(indexTsxFilePath)) {
