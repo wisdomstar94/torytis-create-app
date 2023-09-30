@@ -33,8 +33,7 @@ export const tsconfigJsonContent = () => `
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "esModuleInterop": true
-  },
-  "include": ["global.d.ts"]
+  }
 }
 `.trim();
 
