@@ -21,7 +21,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "postcss-modules": "^6.0.0",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
-    "@wisdomstar94/torytis": "^0.0.8"
+    "@wisdomstar94/torytis": "^0.0.9"
   }
 }
 `.trim();
@@ -62,8 +62,8 @@ module.exports = {
 }
 `.trim();
 
-/** @types/global.d.ts */
-export const globalDTsContent = () => `
+/** torytis-env.d.ts */
+export const torytisEnvDTsContent = () => `
 /// <reference types="@wisdomstar94/torytis" />
 `.trim();
 
@@ -79,6 +79,7 @@ out
 
 /** src/index.tsx */
 export const indexTsxContent = () => `
+import '../torytis-env';
 import React from "react";
 import './index.scss';
 

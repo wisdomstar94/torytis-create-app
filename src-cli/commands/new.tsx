@@ -2,7 +2,7 @@ import { Command } from "commander";
 import path from "path";
 import fs from 'fs';
 import { exec } from 'child_process';
-import { gitignoreContent, indexScssContent, indexTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, globalDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
+import { gitignoreContent, indexScssContent, indexTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
 
 export function CommandNew(program: Command) {
   program
@@ -46,18 +46,18 @@ export function CommandNew(program: Command) {
       const tailwindConfigJsFilePath = path.join(currentTerminalPath, projectName, 'tailwind.config.js');
       fs.writeFileSync(tailwindConfigJsFilePath, tailwindConfigJsContent());
 
-      // // global.d.ts 파일 생성하기
-      // const globalDTsFilePath = path.join(currentTerminalPath, projectName, 'global.d.ts');
-      // fs.writeFileSync(globalDTsFilePath, globalDTsContent());
+      // torytis-env.d.ts 파일 생성하기
+      const torytisEnvDTsFilePath = path.join(currentTerminalPath, projectName, 'torytis-env.d.ts');
+      fs.writeFileSync(torytisEnvDTsFilePath, torytisEnvDTsContent());
 
-      // global.d.ts 파일 생성하기
-      const typesFolderPath = path.join(currentTerminalPath, projectName, '@types');
-      if (!fs.existsSync(typesFolderPath)) {
-        fs.mkdirSync(typesFolderPath);
-      }
-      const typesGlobalDTsFilePath = path.join(typesFolderPath, 'global.d.ts');
-      fs.writeFileSync(typesGlobalDTsFilePath, globalDTsContent());
-      fs.writeFileSync(path.join(newRepositoryPath, 'global.d.ts'), globalDTsContent());
+      // // global.d.ts 파일 생성하기
+      // const typesFolderPath = path.join(currentTerminalPath, projectName, '@types');
+      // if (!fs.existsSync(typesFolderPath)) {
+      //   fs.mkdirSync(typesFolderPath);
+      // }
+      // const typesGlobalDTsFilePath = path.join(typesFolderPath, 'global.d.ts');
+      // fs.writeFileSync(typesGlobalDTsFilePath, globalDTsContent());
+      // fs.writeFileSync(path.join(newRepositoryPath, 'global.d.ts'), globalDTsContent());
 
       // .gitignore 파일 생성하기
       const gitignoreFilePath = path.join(currentTerminalPath, projectName, '.gitignore');
