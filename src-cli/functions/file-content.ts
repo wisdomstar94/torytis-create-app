@@ -104,8 +104,8 @@ export const indexScssContent = () => `
 @tailwind utilities;
 `.trim();
 
-/** src/index.script.ts */
-export const indexScriptTsContent = () => `
+/** src/index.script.tsx */
+export const indexScriptTsxContent = () => `
 window.addEventListener('load', () => {
   // ...
 });
