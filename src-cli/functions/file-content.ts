@@ -78,7 +78,6 @@ out
 
 /** src/index.tsx */
 export const indexTsxContent = () => `
-import '../torytis-env';
 import React from "react";
 import './index.scss';
 
