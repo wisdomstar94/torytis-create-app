@@ -2,7 +2,7 @@ import { Command } from "commander";
 import path from "path";
 import fs from 'fs';
 import { exec } from 'child_process';
-import { gitignoreContent, indexScssContent, indexTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
+import { gitignoreContent, indexScssContent, indexScriptTsContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
 
 export function CommandNew(program: Command) {
   program
@@ -87,10 +87,10 @@ export function CommandNew(program: Command) {
         fs.writeFileSync(indexScssFilePath, indexScssContent());
       }
 
-      // src/index.ts 파일 생성하기
-      const indexTsFilePath = path.join(currentTerminalPath, projectName, 'src', 'index.ts');
+      // src/index.script.ts 파일 생성하기
+      const indexTsFilePath = path.join(currentTerminalPath, projectName, 'src', 'index.script.ts');
       if (!fs.existsSync(indexTsFilePath)) {
-        fs.writeFileSync(indexTsFilePath, indexTsContent());
+        fs.writeFileSync(indexTsFilePath, indexScriptTsContent());
       }
 
       // .vscode 폴더 생성하기
