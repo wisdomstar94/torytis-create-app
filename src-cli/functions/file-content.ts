@@ -21,7 +21,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "postcss-modules": "^6.0.0",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
-    "@wisdomstar94/torytis": "^0.0.13"
+    "@wisdomstar94/torytis": "^0.0.14"
   }
 }
 `.trim();
