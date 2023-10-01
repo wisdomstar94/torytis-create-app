@@ -2,7 +2,7 @@ import { Command } from "commander";
 import path from "path";
 import fs from 'fs';
 import { exec } from 'child_process';
-import { gitignoreContent, indexScssContent, indexScriptTsxContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigJsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
+import { gitignoreContent, indexScssContent, indexScriptTsxContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigTsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
 
 export function CommandNew(program: Command) {
   program
@@ -42,9 +42,9 @@ export function CommandNew(program: Command) {
       const postcssConfigJsFilePath = path.join(currentTerminalPath, projectName, 'postcss.config.js');
       fs.writeFileSync(postcssConfigJsFilePath, postcssConfigJsContent());
 
-      // tailwind.config.js 파일 생성하기
-      const tailwindConfigJsFilePath = path.join(currentTerminalPath, projectName, 'tailwind.config.js');
-      fs.writeFileSync(tailwindConfigJsFilePath, tailwindConfigJsContent());
+      // tailwind.config.ts 파일 생성하기
+      const tailwindConfigTsFilePath = path.join(currentTerminalPath, projectName, 'tailwind.config.ts');
+      fs.writeFileSync(tailwindConfigTsFilePath, tailwindConfigTsContent());
 
       // torytis-env.d.ts 파일 생성하기
       const torytisEnvDTsFilePath = path.join(currentTerminalPath, projectName, 'torytis-env.d.ts');

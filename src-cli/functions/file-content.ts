@@ -39,7 +39,7 @@ export const tsconfigJsonContent = () => `
 
 /** postcss.config.js */
 export const postcssConfigJsContent = () => `
-module.exports = {
+export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
@@ -47,10 +47,11 @@ module.exports = {
 }
 `.trim();
 
-/** tailwind.config.js */
-export const tailwindConfigJsContent = () => `
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+/** tailwind.config.ts */
+export const tailwindConfigTsContent = () => `
+import type { Config } from 'tailwindcss';
+
+export default {
   content: [
     './src/**/*.tsx', './src/**/*.scss', './src/**/*.ts',
   ],
@@ -58,7 +59,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+} satisfies Config
 `.trim();
 
 /** torytis-env.d.ts */
