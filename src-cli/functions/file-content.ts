@@ -21,7 +21,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "postcss-modules": "^6.0.0",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
-    "@wisdomstar94/torytis": "^0.0.16"
+    "@wisdomstar94/torytis": "^0.0.17"
   }
 }
 `.trim();
@@ -77,8 +77,8 @@ out
 .torytis
 `.trim();
 
-/** src/index.tsx */
-export const indexTsxContent = () => `
+/** src/index.component.tsx */
+export const indexComponentTsxContent = () => `
 import React from "react";
 import './index.scss';
 

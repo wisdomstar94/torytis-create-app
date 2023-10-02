@@ -2,7 +2,7 @@ import { Command } from "commander";
 import path from "path";
 import fs from 'fs';
 import { exec } from 'child_process';
-import { gitignoreContent, indexScssContent, indexScriptTsxContent, indexTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigTsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
+import { gitignoreContent, indexScssContent, indexScriptTsxContent, indexComponentTsxContent, packageJsonContent, postcssConfigJsContent, tailwindConfigTsContent, torytisEnvDTsContent, tsconfigJsonContent, vscodeSettingsJsonContent, vscodeTailwindJsonContent } from "../functions/file-content";
 
 export function CommandNew(program: Command) {
   program
@@ -75,10 +75,10 @@ export function CommandNew(program: Command) {
         fs.mkdirSync(srcPublicFolderPath);
       }
 
-      // src/index.tsx 파일 생성하기
-      const indexTsxFilePath = path.join(currentTerminalPath, projectName, 'src', 'index.tsx');
-      if (!fs.existsSync(indexTsxFilePath)) {
-        fs.writeFileSync(indexTsxFilePath, indexTsxContent());
+      // src/index.component.tsx 파일 생성하기
+      const indexComponentTsxFilePath = path.join(currentTerminalPath, projectName, 'src', 'index.component.tsx');
+      if (!fs.existsSync(indexComponentTsxFilePath)) {
+        fs.writeFileSync(indexComponentTsxFilePath, indexComponentTsxContent());
       }
 
       // src/index.scss 파일 생성하기
