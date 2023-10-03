@@ -9,7 +9,8 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "build": "torytis build"
+    "build": "torytis build",
+    "build:variable": "torytis build:variable"
   },
   "devDependencies": {
     "@types/node": "^20.7.0",
@@ -21,7 +22,7 @@ export const packageJsonContent = (params: PackageJsonContentParams) => `
     "postcss-modules": "^6.0.0",
     "typescript": "^5.2.2",
     "esbuild": "^0.19.4",
-    "@wisdomstar94/torytis": "^0.0.19"
+    "@wisdomstar94/torytis": "^0.0.21"
   }
 }
 `.trim();
